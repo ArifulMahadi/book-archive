@@ -1,7 +1,10 @@
 
-const searchBook=()=>{
-    const searchField=document.getElementById('search-field');
-    const searchText=searchField.value;
+const searchBook = () => {
+    const searchField = document.getElementById('search-field');
+    const searchText = searchField.value;
+    // showing spniner
+    toggleSearchResult('none');
+    toggleSpiner('block');
     // console.log(searchText);
     searchField.value='';
     if(searchText===''){
@@ -18,7 +21,7 @@ const searchBook=()=>{
 }
 const displaySearchBook = books => {
     const searchResult = document.getElementById('search-result');
-    searchResult.textContent='';
+    searchResult.textContent = '';
     if(books.offset === null){
       
         const errorMessage = document.getElementById('error-message')
@@ -38,5 +41,14 @@ const displaySearchBook = books => {
             </div>
           </div> `
           searchResult.appendChild(div);
-        })   
+        })
+        toggleSearchResult('block');
+        toggleSpiner('none');
+           
 }
+const toggleSpiner = displayStyle => {
+  document.getElementById('spiner').style.display = displayStyle;
+};
+const toggleSearchResult = displayStyle => {
+  document.getElementById('search-result').style.display = displayStyle;
+};

@@ -7,6 +7,11 @@
     <title>Book Archive</title>
     <!-- bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        #spiner{
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -19,6 +24,11 @@
         <div class="d-flex text-center">
             <input id="search-field" class="form-control p-2 " type="search"    placeholder="Search book">
             <button onclick="searchBook()" class="btn btn-success">search</button>
+        </div>
+        <div id="spiner" class="text-center mt-2">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
         </div>
     </section>
 
