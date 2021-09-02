@@ -3,17 +3,18 @@ const searchBook = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     // showing spniner
-    toggleSearchResult('none');
-    toggleSpiner('block');
+    
+   
     // console.log(searchText);
     searchField.value='';
-    if(searchText===''){
-        const errorMessage=document.getElementById('error-message')
-        errorMessage.innerText='please,type the book name';
+    if(searchText === ''){
+        const errorMessage = document.getElementById('error-message')
+        errorMessage.innerText = 'please,type the book name';
       return;
      }
-   
-    const url=`https://openlibrary.org/search.json?q=${searchText}`
+     toggleSearchResult('none');
+     toggleSpiner('block');
+    const url = `https://openlibrary.org/search.json?q=${searchText}`
     // console.log(url);
     fetch(url)
     .then(res => res.json())
